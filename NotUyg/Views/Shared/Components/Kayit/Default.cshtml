@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "User Page";
+}
+@model KayitData
+
+@Html.Partial("_ValidationScriptsPartial")
+
+<div class="container">
+
+    <div class="col-6 mt-5 mx-auto">
+        <div class="card  shadow-lg border-2 p-3">
+            <h3 class="text-center text-dark">
+                <i class="bi bi-person-plus-fill"></i>  KAYIT OL
+            </h3>
+
+            <form asp-action="Kayit" asp-controller="User" method="post">
+
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="mb-3">
+                    <label asp-for="Email" class="form-label">Email</label>
+                    <input asp-for="Email" class="form-control">
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Isim" class="form-label fw-normal">İsim</label>
+                    <input asp-for="Isim" class="form-control">
+                    <span asp-validation-for="Isim" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Soyad" class="form-label fw-normal"></label>
+                    <input asp-for="Soyad" class="form-control">
+                    <span asp-validation-for="Soyad" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="Password" class="form-label fw-normal">Şifre</label>
+                    <input asp-for="Password" type="password" class="form-control">
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Kayıt</button>
+                </div>
+
+            </form>
+
+        </div>
+    </div>
+</div>

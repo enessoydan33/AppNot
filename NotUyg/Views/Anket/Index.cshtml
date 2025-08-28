@@ -1,0 +1,137 @@
+﻿@{
+    ViewData["Title"] = "Not Page";
+}
+@model AnketKayit
+
+
+<div class="container">
+
+    <div class="col-4 mt-5 mx-auto mb-4">
+        <div class="card shadow-lg  border-2 p-3">
+            <h3 class="text-center text-black"><i class="bi bi-journal-plus"></i> Anket Ekle</h3>
+
+            <form asp-action="Index" asp-controller="Anket" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+
+                <div class="mb-3 " id="des">
+                    <label asp-for="Description" class="form-label fw-normal">Açıklama</label>
+                    <input asp-for="Description" class="form-control fw-normal">
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class=" mb-3">
+                    <label asp-for="Title" class="form-label fw-normal">Başlık</label>
+                    <input asp-for="Title" class="form-control">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3" id="optionsContainer">
+                    <label class="form-label">Seçenekler</label>
+                    <div class="input-group mb-2">
+                        <input name="OptName[0]" class="form-control" placeholder="Seçenek 1" />
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <button type="button" class="btn btn-outline-primary" onclick="addOption()"><b>+ Seçenek Ekle</b></button>
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary"><i class="bi bi-plus-circle"></i>  Anket Oluştur</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    <script>
+        let optionCount = 1;
+        function addOption() {
+            const container = document.getElementById("optionsContainer");
+
+            const div = document.createElement("div");
+            div.classList.add("input-group", "mb-2");
+
+            const input = document.createElement("input");
+            input.name = `OptName[${optionCount}]`;
+            input.className = "form-control";
+            input.placeholder = `Seçenek ${optionCount + 1}`;
+
+            div.appendChild(input);
+            container.appendChild(div);
+            optionCount++;
+
+            /* debugger
+             const baslık = document.getElementById("des"); 
+             const baslık1 = baslık.children[0]
+             baslık1.textContent = "AC"; 
+             
+            // Eelement yapma
+             const li = document.createElement("li");
+             const a = document.createElement("a");
+             const i = document.createElement("i");
+             li.className = "list-group-item d-flex;"
+             li.innerHTML = "B";
+             a.className = "delete-item";
+             a.href = "#";
+             i.className = "fa fa-remove";
+            
+            
+             const baslık = document.getElementById("des");
+             const b = baslık.children[1]
+             baslık.removeChild(b);
+             baslık.style.width = "";
+             console.log(b);
+             
+
+
+            // Element Yer değiştirme
+            const h2 = document.createElement("h3");
+            h2.className = "text-black text-center";
+            h2.textContent = "Yeni başlık";
+
+            const h = document.getElementsByClassName("container")[1];
+            const ch = h.children[0].children[0];
+            console.log(ch.childNodes);
+            ch.replaceChild(h2, ch.childNodes[1]);
+            
+
+            // event listener
+            const b = document.getElementsByClassName("mb-3");
+            const baslık = b[1].children[0];
+            baslık.addEventListener("dblclick", run)
+            console.log(baslık);
+
+            function run() {
+                console.log("run");
+            }
+            
+
+
+           // inputa girilen değeri label a yazma
+            const b = document.getElementsByClassName("mb-3");
+            const baslık = b[1].children[1];
+            const acıklama = b[1].children[0];
+            baslık.addEventListener("keyup", yaz)
+
+            function yaz(e) {
+                acıklama.textContent = e.target.value;
+            }
+
+
+
+
+            // Session storage
+            
+            
+            sessionStorage.setItem("11", "enes");
+            console.log(sessionStorage.getItem("11"));
+            sessionStorage.removeItem("11");
+            */
+        }
+        
+    </script>}

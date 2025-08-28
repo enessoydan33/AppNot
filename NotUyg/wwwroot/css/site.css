@@ -1,0 +1,87 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+.form-select {
+    height: auto; 
+    min-height: 40px; 
+    overflow-y: auto;
+    
+}
+textarea {
+    width: 100%;
+    height: auto;
+    min-height: 100px;
+    overflow-y: auto;
+}
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+    .card:hover {
+        transform: scale(1.02);
+    }
+
+.bg-renk1 {
+    background-color: #ddebf5
+}
+
+.navbar-nav .nav-link {
+    font-size: 1.4rem; 
+}
+
+.dropdown-menu {
+    background-color: #ebf3fa;
+}
+
+.dropdown-item {
+    color: #003366;
+    font-size:larger;
+}
+
+    .dropdown-item:hover {
+        background-color: #b8dcf0;
+    }
+
+
+.card-text{
+    font-size:large;
+}
+
+.card-header{
+    font-size:larger;
+}
+
+a.badge:hover {
+    background-color: #0d6efd;
+    color: white;
+    transition: 0.4s;
+    text-decoration: none;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+}

@@ -1,0 +1,67 @@
+﻿@model List<Not>
+@{
+    ViewBag.Title = "Not Page";
+}
+<form method="get" asp-action="Index" asp-controller="Not">
+    <div class="d-flex justify-content-between align-items-center ">
+        <div>
+            <label class="form-label"><strong>Etiketler</strong></label>
+            <select class="form-select mb-1" name="SelectedTags" asp-items="ViewBag.Tags" onchange="this.form.submit()">
+            </select>
+        </div>
+    </div>
+</form>
+
+
+    @if (TempData["Delete"] != null)
+    {
+        <div class="alert alert-success">@TempData["Delete"]</div>
+    }
+    @if (TempData["Update"] != null)
+    {
+        <div class="alert alert-success">@TempData["Update"]</div>
+    }
+    
+    @foreach (var item in Model)
+    {
+        <div class="card shadow-lg rounded-4 border-1 mx-auto mb-4 col-8">
+
+        <div class="card-header bg-gradient text-dark text-center fw-semibol  rounded-top border-bottom justify-content-between">
+            @item.Baslık
+        </div>
+
+        <div class="card-body d-flex flex-column" style="min-height: 200px">
+            <p class="card-text text-secondary fw-semibold justify-content-start">@item.acıklama</p>
+            @if (item.Durum)
+            {
+                <span class=" text-success justify-content-start text-opacity-75"> Tamamlandı</span>
+            }
+            else
+            {
+                 <span class="text-danger  justify-content-start text-opacity-75"> Tamamlanmadı</span>                        
+            }
+
+            <div class="d-flex flex-wrap  mt-2">
+                @foreach (var tag in item.Tags)
+                {
+                    <a href="/Not/TagListele/@tag.Id"
+                       class="text-decoration-none bg-light text-primary border rounded-pill ms-1 px-1 py-1 fw-normal"
+                       style="max-width: 200px;">
+                        @tag.Name
+                    </a>
+                }
+            </div>
+
+            <div class="d-flex justify-content-between align-items-center mt-3">
+                <div class="text-end">
+                    <small class="text-muted"><i class="bi bi-clock"></i> @item.Tarih.ToString("dd.MM.yyyy")</small>
+                </div>
+                <div>
+                    <a href="/Not/Update/@item.Id" class="btn btn-primary btn-sm me-2"><i class="bi bi-gear"></i>  Güncelle</a>
+                    <a href="/Not/Delete/@item.Id" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i>  Sil</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+}

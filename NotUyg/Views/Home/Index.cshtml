@@ -1,0 +1,116 @@
+﻿@model List<Not>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-fluid ">
+
+    <div class="row text-center">
+
+
+
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <div class="col-6 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">KAYIT</h5>
+                        <p class="card-text">Kayıt ol</p>
+                        <a asp-controller="User" asp-action="Kayit" class="btn btn-primary">Git  <i class="bi bi-arrow-right-square"></i> </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">GİRİŞ</h5>
+                        <p class="card-text">Giriş yap</p>
+                        <a asp-controller="User" asp-action="Kayit" class="btn btn-primary">Git  <i class="bi bi-arrow-right-square"></i> </a>
+                    </div>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="col-4 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">Not Ekle</h5>
+                        <p class="card-text">Yeni bir not oluştur.</p>
+                        <a asp-controller="User" asp-action="Not" class="btn btn-primary">Git  <i class="bi bi-arrow-right-square"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">NOTLARIM</h5>
+                        <p class="card-text">Kaydettiğin tüm notları görüntüle.</p>
+                        <a asp-controller="Not" asp-action="Index" class="btn btn-primary">Git  <i class="bi bi-arrow-right-square"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-4 mb-4">
+                <div class="card shadow">
+                    <div class="card-body">
+                        <h5 class="card-title">PROFİL</h5>
+                        <p class="card-text">Kişisel bilgilerini güncelle</p>
+                        <a asp-controller="User" asp-action="UpdatePassword" class="btn btn-primary">Git  <i class="bi bi-arrow-right-square"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        }
+
+    </div>
+</div>
+
+<div class="row text-center mb-5">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="col-6 mb-1 mx-auto">
+            <div class="card shadow-sm rounded-5 border-1">
+                <h4 class="card-title mt-5"><i class="bi bi-journals"></i> NOTLARIM</h4>
+                <p class="card-text text-success">Son 1 haftadaki notlar</p>
+
+                @foreach (var item in Model)
+                {
+                    <div class=" mb-3">
+                        <div class="card-header bg-gradient">
+                            @item.Baslık
+                        </div>
+
+                        <div class="card-body">
+                            <p class="card-text">@item.acıklama</p>
+                            <p class="card-text">
+                                @if (item.Durum)
+                                {
+                                    <span class="fw-semibold text-success text-opacity-75">Tamamlandı</span>
+                                }
+                                else
+                                {
+                                    <span class="fw-semibold text-danger text-opacity-75">Tamamlanmadı</span>
+                                }
+                            </p>
+
+                            <p class="card-text text-secondary">@item.Tarih.ToShortDateString()</p>
+
+                        </div>
+                    </div>
+                }
+
+            </div>
+        </div>
+
+            @await Component.InvokeAsync("Anket");
+        
+    }
+    else
+    {
+           @await Component.InvokeAsync("Kayit");
+    } 
+
+       
+    </div>

@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NotUyg</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NotUyg.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <!-- Choices.js CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+    <!-- Choices.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-renk1 border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse ">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">Notum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-controller="User" asp-action="Kayit">Kayıt Ol</a>
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav">
+                        @if (User.Identity!.IsAuthenticated)
+                        {
+                            <li class="nav-item dropdown mx-1">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="menubar" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span><i class="bi bi-bar-chart-line"></i> Anketler</span>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown1">
+                                    <li><a class="dropdown-item text-center" asp-action="List" asp-controller="Anket"> Anketlerim</a></li>
+                                    <li><a class="dropdown-item text-center" asp-action="Index" asp-controller="Anket">Anket Ekle </a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown mx-1">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="menubar" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span><i class="bi bi-journals"></i> Notlar </span>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown2">
+                                    <li><a class="dropdown-item text-center" asp-action="Index" asp-controller="Not">Notlarım</a></li>
+                                    <li><a class="dropdown-item text-center" asp-action="Not" asp-controller="User"> Not Ekle</a>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown mx-1">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="menubar" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span><i class="bi bi-person"></i> @User.Identity.Name </span>
+                                </a>
+
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item " asp-action="UpdatePassword" asp-controller="User"><i class="bi bi-gear"></i> Yeni Şifre</a></li>
+                                    <li><a class="dropdown-item" asp-action="Logout" asp-controller="User"><i class="bi bi-box-arrow-left"></i> Çıkış</a>
+                                </ul>
+                            </li>
+
+                        }
+                        else
+                        {
+                            <li class="nav-item">
+                                <a asp-controller="User" asp-action="Index" class="nav-link">Giriş Yap</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+   
+    <partial name="_FooterPartial.cshtml"/>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+</body>
+</html>

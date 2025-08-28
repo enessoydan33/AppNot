@@ -1,0 +1,42 @@
+﻿@model List<AnketListViewModel>
+@{
+    ViewBag.Title = "Anket";
+}
+
+<div class="container mt-5">
+    <div class="col-md-7 mx-auto">
+        @foreach (var item in Model)
+        {
+            <div class="card shadow p-4 mb-4">
+                <h4 class="mb-3 text-center"><i class="bi bi-bar-chart-line"></i> @item.Title</h4>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                @if (item.HVoted)
+                {
+                    <p class="text-success  opacity-75"><i class="bi bi-check-circle"></i> Bu ankete oy verdiniz.</p>
+                }
+                <p class="text-muted">@item.Descirption</p>
+                <p><small><i class="bi bi-clock"></i> Başlangıç Tarihi: @item.Time.ToString("dd.MM.yyyy")</small></p>
+                <form asp-action="Vote" asp-controller="Anket" method="post">
+                    <input type="hidden" name="PollId" value="@item.Id" />
+
+                    @foreach (var option in item.Options)
+                    {
+                        <div class="form-check mb-2">
+                            <input class="form-check-input" type="radio" name="OptionId" value="@option.Id" id="option-@option.Id">
+                            <label class="form-check-label" for="option-@option.Id">
+                                @option.Name
+                                <span class="text-danger">(@option.VoteCount oy)</span>
+                            </label>
+                        </div>
+                    }
+
+                    <div class="text-end mt-3">
+                        <button type="submit" class="btn btn-primary"><i class="bi bi-envelope-plus-fill"></i>  Oy Ver</button>
+                    </div>
+                </form>
+            </div>
+        }
+
+
+        </div>
+    </div>
