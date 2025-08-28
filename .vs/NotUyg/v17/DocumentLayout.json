@@ -3,12 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\90537\\source\\repos\\NotUyg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|c:\\users\\90537\\source\\repos\\notuyg\\notuyg\\views\\shared\\_footerpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|solutionrelative:notuyg\\views\\shared\\_footerpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|c:\\users\\90537\\source\\repos\\notuyg\\notuyg\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|solutionrelative:notuyg\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|c:\\users\\90537\\source\\repos\\notuyg\\notuyg\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|solutionrelative:notuyg\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|c:\\users\\90537\\source\\repos\\notuyg\\notuyg\\libman.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|solutionrelative:notuyg\\libman.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|c:\\users\\90537\\source\\repos\\notuyg\\notuyg\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|solutionrelative:notuyg\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|c:\\users\\90537\\source\\repos\\notuyg\\notuyg\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|solutionrelative:notuyg\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|c:\\users\\90537\\source\\repos\\notuyg\\notuyg\\views\\shared\\_footerpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|solutionrelative:notuyg\\views\\shared\\_footerpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,15 +34,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 34,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "libman.json",
+              "DocumentMoniker": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\libman.json",
+              "RelativeDocumentMoniker": "NotUyg\\libman.json",
+              "ToolTip": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\libman.json",
+              "RelativeToolTip": "NotUyg\\libman.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-28T12:15:41.847Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:38:0:{e8034f19-ab72-4f06-83fd-f6832b41aa63}"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\appsettings.json",
+              "RelativeDocumentMoniker": "NotUyg\\appsettings.json",
+              "ToolTip": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\appsettings.json",
+              "RelativeToolTip": "NotUyg\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-28T12:13:08.107Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "NotUyg\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\appsettings.Development.json",
+              "RelativeToolTip": "NotUyg\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-28T12:10:09.627Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "NotUyg\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "NotUyg\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-28T12:07:45.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "_FooterPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\Views\\Shared\\_FooterPartial.cshtml",
               "RelativeDocumentMoniker": "NotUyg\\Views\\Shared\\_FooterPartial.cshtml",
@@ -39,7 +111,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "NotUyg\\Views\\Shared\\_Layout.cshtml",
@@ -47,7 +119,8 @@
               "RelativeToolTip": "NotUyg\\Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAEsAAAAAAAAAAAAAABUAAAA9AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-25T10:43:41.752Z"
+              "WhenOpened": "2025-08-25T10:43:41.752Z",
+              "EditorCaption": ""
             }
           ]
         }

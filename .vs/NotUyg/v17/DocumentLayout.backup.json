@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\90537\\source\\repos\\NotUyg\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|c:\\users\\90537\\source\\repos\\notuyg\\notuyg\\views\\shared\\_footerpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|solutionrelative:notuyg\\views\\shared\\_footerpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|c:\\users\\90537\\source\\repos\\notuyg\\notuyg\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|solutionrelative:notuyg\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|c:\\users\\90537\\source\\repos\\notuyg\\notuyg\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|solutionrelative:notuyg\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|c:\\users\\90537\\source\\repos\\notuyg\\notuyg\\views\\shared\\_footerpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{61E5B3D1-F51E-4ED0-BCA6-044F33431C50}|NotUyg\\NotUyg.csproj|solutionrelative:notuyg\\views\\shared\\_footerpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,6 +31,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "NotUyg\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "NotUyg\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-28T12:07:45.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "_FooterPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\90537\\source\\repos\\NotUyg\\NotUyg\\Views\\Shared\\_FooterPartial.cshtml",
               "RelativeDocumentMoniker": "NotUyg\\Views\\Shared\\_FooterPartial.cshtml",
