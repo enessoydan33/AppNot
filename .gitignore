@@ -1,6 +1,39 @@
-bin/
+## ASP.NET Core / .NET
 
+# Build outputs
+bin/
 obj/
 
-appsettings.Development.json
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docobj
 
+# Visual Studio
+.vs/
+*.rsuser
+
+# Rider
+.idea/
+
+# NuGet
+*.nupkg
+*.snupkg
+**/packages/
+!**/packages/build/
+.nuget/
+
+# Logs
+*.log
+logs/
+
+# Sensitive configuration - rename appsettings.example.json to appsettings.json
+appsettings.json
+appsettings.Development.json
+appsettings.*.json
+!appsettings.example.json
+
+# OS files
+.DS_Store
+Thumbs.db
