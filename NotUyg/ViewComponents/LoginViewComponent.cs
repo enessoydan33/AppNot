@@ -1,6 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using NotUyg.Data.Abstract;
 using NotUyg.Models;
 
 namespace NotUyg.ViewComponents

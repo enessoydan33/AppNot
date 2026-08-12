@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using NotUyg.Data;
@@ -20,6 +19,12 @@ builder.Services.AddDbContext<NotContext>(options =>
 );
 
 builder.Services.AddIdentity<User, IdentityRole>().AddEntityFrameworkStores<NotContext>();
+
+builder.Services.ConfigureApplicationCookie(options =>
+{
+    options.LoginPath = "/User/Index";
+    options.AccessDeniedPath = "/User/Index";
+});
 
 builder.Services.Configure<IdentityOptions>(options =>
 {

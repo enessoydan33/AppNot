@@ -56,9 +56,15 @@
                 <div class="text-end">
                     <small class="text-muted"><i class="bi bi-clock"></i> @item.Tarih.ToString("dd.MM.yyyy")</small>
                 </div>
-                <div>
-                    <a href="/Not/Update/@item.Id" class="btn btn-primary btn-sm me-2"><i class="bi bi-gear"></i>  Güncelle</a>
-                    <a href="/Not/Delete/@item.Id" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i>  Sil</a>
+                <div class="d-flex align-items-center gap-2">
+                    <a asp-action="Update" asp-controller="Not" asp-route-id="@item.Id" class="btn btn-primary btn-sm"><i class="bi bi-gear"></i>  Güncelle</a>
+                    <form asp-action="Delete" asp-controller="Not" method="post" class="d-inline">
+                        @Html.AntiForgeryToken()
+                        <input type="hidden" name="id" value="@item.Id" />
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Bu notu silmek istediğinize emin misiniz?');">
+                            <i class="bi bi-trash"></i>  Sil
+                        </button>
+                    </form>
                 </div>
             </div>
 

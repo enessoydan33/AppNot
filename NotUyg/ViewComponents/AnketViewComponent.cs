@@ -1,19 +1,19 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration.UserSecrets;
 using NotUyg.Data.Abstract;
 using NotUyg.Entity;
 using NotUyg.Models;
 
 namespace NotUyg.ViewComponents
 {
-    public class AnketViewComponent:ViewComponent
+    public class AnketViewComponent : ViewComponent
     {
         private readonly IAnketRepository _anketRepository;
         private readonly IUserVoteRepository _userVote;
         private readonly UserManager<User> _user;
-        public AnketViewComponent(IAnketRepository anketRepository,UserManager<User> user,IUserVoteRepository userVote)
+
+        public AnketViewComponent(IAnketRepository anketRepository, UserManager<User> user, IUserVoteRepository userVote)
         {
             _anketRepository = anketRepository;
             _user = user;
@@ -22,7 +22,10 @@ namespace NotUyg.ViewComponents
 
         public async Task<IViewComponentResult> InvokeAsync()
         {
-             var user= await _user.GetUserAsync(HttpContext.User);
+            var user = await _user.GetUserAsync(HttpContext.User);
+            if (user == null)
+                return View("Default", new List<AnketListViewModel>());
+
             var userId = user.Id;
 
             var ucGunOnce = DateTime.Now.AddDays(3);
@@ -30,30 +33,27 @@ namespace NotUyg.ViewComponents
 
             var VoteCounts = _userVote.userVotes.GroupBy(x => x.OptionId)
                 .Select(x => new { OptionId = x.Key, Count = x.Count() })
-                .ToDictionary(x=> x.OptionId ,x=> x.Count);
+                .ToDictionary(x => x.OptionId, x => x.Count);
 
-            // Kullanıcının oy verdiği anket ID'leri
             var votedPolls = _userVote.userVotes.Where(x => x.UserId == userId)
                 .Select(x => x.PollId).Distinct().ToHashSet();
 
             var model = polls.Select(p => new AnketListViewModel
             {
-                Id=p.Id,
+                Id = p.Id,
                 Descirption = p.Description,
                 Time = p.Time,
                 Title = p.Title,
-                HVoted= votedPolls.Contains(p.Id),
-                Options = p.Options.Select(p => new OptionViewModel
+                HVoted = votedPolls.Contains(p.Id),
+                Options = p.Options.Select(o => new OptionViewModel
                 {
-                    Id = p.Id,
-                    Name = p.Name,
-                    VoteCount = VoteCounts.ContainsKey(p.Id) ? VoteCounts[p.Id] : 0
+                    Id = o.Id,
+                    Name = o.Name,
+                    VoteCount = VoteCounts.ContainsKey(o.Id) ? VoteCounts[o.Id] : 0
                 }).ToList()
             }).ToList();
 
-            return View("Default",model);
+            return View("Default", model);
         }
-
-
     }
 }

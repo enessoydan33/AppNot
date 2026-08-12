@@ -1,75 +1,146 @@
-# AppNot 📝
+﻿# AppNot
 
-ASP.NET Core MVC ile geliştirilmiş bir not ve öğrenme yönetimi uygulaması.
+ASP.NET Core MVC note-taking and polling web app with authentication, tags, and user-specific CRUD.
 
-## 🚀 Özellikler
+Built with **ASP.NET Core Identity**, **Entity Framework Core**, and **SQL Server**.
 
-- Kullanıcı kaydı ve girişi
-- Not oluşturma ve yönetimi
-- XP ve rozet sistemi
-- Lig sıralaması
-- Öğretmen paneli
-- Haftalık program takibi
+## Features
 
-## 🛠️ Teknolojiler
+- User registration, login, and logout (ASP.NET Core Identity)
+- Password change
+- Notes CRUD (create, list, update, delete)
+- Note completion status
+- Tag-based note organization and filtering
+- Poll creation with multiple options
+- Poll voting with live vote counts
+- One vote per user per poll
+- Per-user note ownership checks on update/delete
 
-- **ASP.NET Core 8 MVC**
-- **Entity Framework Core**
-- **SQL Server Express**
-- **Bootstrap 5**
+## Tech Stack
 
-## ⚙️ Kurulum
+- ASP.NET Core 8 MVC
+- C#
+- Entity Framework Core
+- SQL Server
+- ASP.NET Core Identity
+- Razor Views
+- Repository Pattern
+- Dependency Injection
+- LINQ
+- Bootstrap 5
+- jQuery
+- Choices.js
 
-### Gereksinimler
+## Architecture
+
+```text
+Controller
+  → Repository interfaces (DI)
+    → EF Core / IdentityDbContext
+      → SQL Server
+```
+
+Domain data access goes through repository interfaces (`INotRepository`, `ITagRepository`, `IAnketRepository`, `IUserVoteRepository`) implemented with EF Core. Identity is handled by ASP.NET Core Identity on top of the same `IdentityDbContext`.
+
+## Security
+
+- Authenticated routes for notes, polls, and account actions
+- Public access only for Home, login, and registration
+- Per-user note ownership validation on update/delete
+- Anti-forgery tokens on state-changing forms
+- ASP.NET Core Identity for authentication
+
+## Screenshots
+
+### Notes & Tag Filtering
+
+![Notes list with tag filtering](docs/screenshots/notes.png)
+
+### Polls & Voting
+
+![Poll list with voting and vote counts](docs/screenshots/polls.png)
+
+### Dashboard
+
+![Logged-in home dashboard](docs/screenshots/home.png)
+
+### Create Note
+
+![Create note form with tag selection](docs/screenshots/create-note.png)
+
+## Configuration
+
+Real connection strings are **not** stored in the repository.
+
+1. Copy the example config to a local Development file (gitignored):
+
+**PowerShell**
+
+```powershell
+Copy-Item NotUyg\appsettings.example.json NotUyg\appsettings.Development.json
+```
+
+**bash**
+
+```bash
+cp NotUyg/appsettings.example.json NotUyg/appsettings.Development.json
+```
+
+2. Edit `NotUyg/appsettings.Development.json` and set your own SQL Server connection string under `ConnectionStrings:sql_connection`.
+
+Example placeholder (replace with your server):
+
+```json
+"ConnectionStrings": {
+  "sql_connection": "Server=YOUR_SERVER\\SQLEXPRESS;Database=NotUygDb;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true"
+}
+```
+
+## Running Locally
+
+Requirements:
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download)
-- [SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+- SQL Server (Express or LocalDB)
+- EF Core tools: `dotnet tool install --global dotnet-ef`
 
-### Adımlar
+Steps:
 
-1. **Repoyu klonla:**
-   ```bash
-   git clone https://github.com/KULLANICI_ADI/AppNot.git
-   cd AppNot
-   ```
-
-2. **appsettings.json dosyasını oluştur:**
-   ```bash
-   cp NotUyg/appsettings.example.json NotUyg/appsettings.json
-   ```
-   Ardından `appsettings.json` içindeki `YOUR_SERVER` kısmını kendi SQL Server adınla değiştir:
-   ```json
-   "Server=BILGISAYAR_ADIN\\SQLEXPRESS;Database=NotUygDb;..."
-   ```
-
-3. **Veritabanını oluştur:**
-   ```bash
-   cd NotUyg
-   dotnet ef database update
-   ```
-
-4. **Uygulamayı başlat:**
-   ```bash
-   dotnet run
-   ```
-
-   Tarayıcında `https://localhost:5001` adresine git.
-
-## 📁 Proje Yapısı
-
+```bash
+git clone https://github.com/enessoydan33/AppNot.git
+cd AppNot
 ```
+
+Create and edit Development config (see Configuration above), then:
+
+```bash
+cd NotUyg
+dotnet restore
+dotnet ef database update
+dotnet run
+```
+
+Open the URL shown in the console (typically `https://localhost:7139` or `http://localhost:5030`).
+
+## Database / Data Model
+
+- `User` → many `Not` (notes)
+- `Not` ↔ `Tag` (many-to-many)
+- `Poll` → many `Option`
+- `UserVote` links `User`, `Poll`, and `Option` (one vote per user per poll)
+
+## Project structure
+
+```text
 AppNot/
 ├── NotUyg/
-│   ├── Controllers/      # MVC Controller'lar
-│   ├── Data/             # DbContext ve Repository'ler
-│   ├── Entity/           # Veritabanı modelleri
-│   ├── Migrations/       # EF Migration'ları
-│   ├── Models/           # View modelleri
-│   ├── Views/            # Razor sayfaları
-│   └── wwwroot/          # Statik dosyalar (CSS, JS, resimler)
+│   ├── Controllers/
+│   ├── Data/             # DbContext and repositories
+│   ├── Entity/
+│   ├── Migrations/
+│   ├── Models/
+│   ├── Views/
+│   └── wwwroot/
+├── docs/screenshots/
 └── README.md
 ```
-
-## 📄 Lisans
-
-Bu proje MIT lisansı altında sunulmaktadır.

@@ -1,39 +1,39 @@
-## ASP.NET Core / .NET
-
-# Build outputs
+## Build
 bin/
 obj/
+out/
 
-# User-specific files
+## Visual Studio / IDE
+.vs/
 *.user
 *.suo
 *.userosscache
-*.sln.docobj
-
-# Visual Studio
-.vs/
+*.sln.docstates
+*.userprefs
 *.rsuser
 
-# Rider
+## Rider / VS Code
 .idea/
+.vscode/
+!.vscode/extensions.json
 
-# NuGet
+## NuGet
 *.nupkg
 *.snupkg
-**/packages/
-!**/packages/build/
+packages/
 .nuget/
 
-# Logs
-*.log
-logs/
-
-# Sensitive configuration - rename appsettings.example.json to appsettings.json
-appsettings.json
+## Secrets — never commit real connection strings
 appsettings.Development.json
-appsettings.*.json
-!appsettings.example.json
+**/appsettings.Development.json
+# Keep tracked appsettings.json minimal (no secrets). Prefer example file for clone setup.
+# If you put a real connection string in appsettings.json, stop tracking it:
+#   git rm --cached NotUyg/appsettings.json
 
-# OS files
+## OS / logs
 .DS_Store
 Thumbs.db
+desktop.ini
+*.log
+*.tmp
+logs/
