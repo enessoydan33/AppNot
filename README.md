@@ -1,4 +1,4 @@
-﻿# AppNot
+# AppNot
 
 ASP.NET Core MVC note-taking and polling web app with authentication, tags, and user-specific CRUD.
 
